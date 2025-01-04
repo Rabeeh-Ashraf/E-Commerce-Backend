@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
-const wishlistschema = new mongoose.schema({
-userid : {
+const wishlistschema = new mongoose.Schema({
+userId : {
     type :mongoose.Schema.Types.ObjectId,
     ref : "user"
 },
