@@ -10,6 +10,7 @@ const userprofilemanagment = require("./routes/profilemanagment")
 const category = require("./routes/category")
 const wishlist = require("./routes/wishlist")
 const cart = require ("./routes/cart")
+const admincouponmanagment = require("./adminroutes/couponmanagment")
 const port = process.env.port
 
 
@@ -28,6 +29,7 @@ app.use(userprofilemanagment)
 app.use(category)
 app.use(wishlist)
 app.use(cart)
+app.use(admincouponmanagment)
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 }); 
