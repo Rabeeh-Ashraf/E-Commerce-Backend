@@ -29,10 +29,9 @@ const cartschema = new mongoose.Schema ({
         }
     ], 
     totalprice : {
-        type : Number 
-        // required : true, 
-        // default : 0
+        type : Number ,
     }
+    
 
 })
 module.exports = mongoose.model('cart',cartschema)

@@ -98,3 +98,4 @@ const updatecoupon = async(req,res)=>{
     }
 }
 module.exports ={createcoupon ,viewcoupon,deletecoupon,updatecoupon  }
+// hwlll

@@ -30,6 +30,10 @@ const addtocart = async (req, res) => {
       price: product.price,
       netamount:product.price,
     });
+    //saving the new cartschema
+    carts.totalprice = carts.products.reduce((total,product)=>{
+      return total + product.netamount 
+    },0)
     await carts.save();
     return res.status(200).json({
       messasge: " cart created and product added successfully",
@@ -46,6 +50,9 @@ const addtocart = async (req, res) => {
       }],
       });
       //saving the new cartschema
+      carts.totalprice = carts.products.reduce((total,product)=>{
+        return total + product.netamount 
+      },0)
       await carts.save();
       return res.status(200).json({
         messasge: " cart created and product added successfully",

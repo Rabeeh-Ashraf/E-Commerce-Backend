@@ -14,6 +14,10 @@ const couponschema = mongoose.Schema({
         type : Number,
         reuired :true,
     },
+    isactive : {
+        type :Boolean,
+        default  :true
+    } 
     // productId : {
     //             type : mongoose.Schema.Types.ObjectId,
     //             ref : 'products',
