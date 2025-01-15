@@ -12,6 +12,7 @@ const wishlist = require("./routes/wishlist")
 const cart = require ("./routes/cart")
 const admincouponmanagment = require("./adminroutes/couponmanagment")
 const ordermanagement = require("./routes/ordermanagement")
+const adminordermanagement =require ( "./adminroutes/ordermanagement")
 const port = process.env.port
 
 
@@ -32,6 +33,7 @@ app.use(wishlist)
 app.use(cart)
 app.use(admincouponmanagment)
 app.use(ordermanagement) 
+app.use(adminordermanagement)
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
 }); 

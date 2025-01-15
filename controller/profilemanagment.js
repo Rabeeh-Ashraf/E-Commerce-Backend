@@ -2,6 +2,7 @@
 const schema = require("../model/userschema");
 const addressschema = require("../model/addressschema");
 const bcrypt = require("bcrypt");
+const logoutschema = require("../model/logoutschema")
 const addaddress = async(req,res)=>{
     try {
         const userId = req.user.id
@@ -109,4 +110,24 @@ const changepassword = async (req, res) => {
     });
   }
 };
-module.exports = { updateprofile, profiledetails, changepassword ,addaddress};
+const logout   = async(req,res)=>{
+  try {
+    const userId = req.user.id
+    
+    const token = req.headers.authorization.split(" ")[1];
+    await logoutschema.create({ token , userId});
+
+    res.status(200).json({
+      message: "Logged out successfully",
+    });
+
+  } catch (error) {
+    console.error(error);
+    
+    res.status(500).json({
+      message :  "server error in logout "
+    })
+  }
+}
+
+module.exports = { updateprofile, profiledetails, changepassword ,addaddress,logout};
